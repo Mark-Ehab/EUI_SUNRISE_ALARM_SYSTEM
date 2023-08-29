@@ -33,9 +33,12 @@ typedef unsigned char boolean;
  * =============================================================*/
 #define LOGIC_HIGH       (1u)
 #define LOGIC_LOW        (0u)
+#define RT_OK			       (1u)
+#define RT_NOK			     (0u)	
 
 #define NULL 0
-#define NULL_PTR            ((void*)0)
+#define NULL_PTR				 0		
+#define NULL_POINTER			 0
 typedef unsigned char         uint8;         
 typedef signed char           sint8;         
 typedef unsigned short        uint16;        
