@@ -14,6 +14,8 @@
 /* this is the counter that counts how many alarms are used */
 uint8 g_alarm_cnt = 1;
 
+uint8 g_fired_alarm = FALSE;
+
 /* array of Alarm_config structure that holds the required    *
  * configuration of each alarm.                               */
 Alarm_config alarms[MaximumAlarms] = {
@@ -22,6 +24,54 @@ Alarm_config alarms[MaximumAlarms] = {
 		{FALSE , {AlarmInitialValue}, 0}, /* alarm 2 */
 		{FALSE , {AlarmInitialValue}, 0}  /* alarm 3 */
 };
+
+void actionToBeTaken(void){
+	if(g_fired_alarm == ALARM_0){
+		LCD_displayString("alarm 0 time is out");
+	} else if(g_fired_alarm == ALARM_1){
+		LCD_displayString("alarm 1 time is out");
+	} else if(g_fired_alarm == ALARM_2){
+		LCD_displayString("alarm 2 time is out");
+	} else if(g_fired_alarm == ALARM_3){
+		LCD_displayString("alarm 3 time is out");
+	} else{
+		/* do nothing */
+	}
+}
+
+void interrupt_function(void){
+	if(alarms[0].flag){
+		if(alarms[0].secCnt == 0){
+			g_fired_alarm = ALARM_0;
+			actionToBeTaken();
+		} else{
+			alarms[0].secCnt--;
+		}
+	} else if(alarms[1].flag){
+		if(alarms[1].secCnt == 0){
+			g_fired_alarm = ALARM_1;
+			actionToBeTaken();
+		} else{
+			alarms[1].secCnt--;
+		}
+	} else if(alarms[2].flag){
+		if(alarms[2].secCnt == 0){
+			g_fired_alarm = ALARM_2;
+			actionToBeTaken();
+		} else{
+			alarms[2].secCnt--;
+		}
+	} else if(alarms[3].flag){
+		if(alarms[3].secCnt == 0){
+			g_fired_alarm = ALARM_3;
+			actionToBeTaken();
+		} else{
+			alarms[3].secCnt--;
+		}
+	}
+
+}
+
 
 /***********************************************************************************
  * Service Name: App_init
@@ -33,8 +83,8 @@ Alarm_config alarms[MaximumAlarms] = {
  * Description: initializes the used drivers as LCD and Keypad
  ***********************************************************************************/
 void App_init(void){
-	LCD_init_(); /* LCD initialization */
-	KEYPAD_init_(); /* keypad initialization */
+	RTE_LCD_init(); /* LCD initialization */
+	RTE_KEYPAD_init(); /* keypad initialization */
 }
 
 /**********************************************
@@ -48,19 +98,19 @@ void App_init(void){
  **********************************************/
 void App_mainMenu(void){
 	/* clearing the LCD */
-	LCD_clearScreen();
+	RTE_LCD_clearScreen();
 	/* moving the cursor to the first row and first column*/
-	LCD_moveCursor(0,0);
-	LCD_displayString("+Set Alarm   |");
+	RTE_LCD_moveCursor(0,0);
+	RTE_LCD_displayString("+Set Alarm   |");
 	/* moving the cursor to the second row and first column*/
-	LCD_moveCursor(1,0);
-	LCD_displayString("-Cancel Alarm|");
+	RTE_LCD_moveCursor(1,0);
+	RTE_LCD_displayString("-Cancel Alarm|");
 	/* moving the cursor to the third row and first column*/
-	LCD_moveCursor(2,0);
-	LCD_displayString("*Alarm List  |");
+	RTE_LCD_moveCursor(2,0);
+	RTE_LCD_displayString("*Alarm List  |");
 	/* moving the cursor to the fourth row and first column*/
-	LCD_moveCursor(3,0);
-	LCD_displayString("             |");
+	RTE_LCD_moveCursor(3,0);
+	RTE_LCD_displayString("             |");
 }
 
 /***********************************************************************************
@@ -126,23 +176,23 @@ void App_setAlarm(void){
 	uint8 cancelOrContinue;
 	/* here we are setting the LCD to display continue or close *
 	 * options.                                                 */
-	LCD_clearScreen();
-	LCD_moveCursor(0,0);
-	LCD_displayString("please choose:");
-	LCD_moveCursor(1,3);
-	LCD_displayString("0.[continue]");
-	LCD_moveCursor(2,3);
-	LCD_displayString("%.[close]");
+	RTE_LCD_clearScreen();
+	RTE_LCD_moveCursor(0,0);
+	RTE_LCD_displayString("please choose:");
+	RTE_LCD_moveCursor(1,3);
+	RTE_LCD_displayString("0.[continue]");
+	RTE_LCD_moveCursor(2,3);
+	RTE_LCD_displayString("/.[close]");
 	/* here we are taking the input from the user to continue *
 	 * or cancel.                                             */
-	cancelOrContinue = KEYPAD_getPressedKey();
+	cancelOrContinue = RTE_KEYPAD_getPressedKey();
 	/* checking on the user choice if continue or return to the   *
 	 * main menu                                                  */
 	if(cancelOrContinue == CONTINUE){
 		/* setting the LCD to display this sentence. */
-		LCD_clearScreen();
-		LCD_moveCursor(0,0);
-		LCD_displayString("Set the alarm:");
+		RTE_LCD_clearScreen();
+		RTE_LCD_moveCursor(0,0);
+		RTE_LCD_displayString("Set the alarm:");
 		/* checking is the counter of the alarms reaches the maximum *
 		 * amount of the allowed alarms or not(i.e., is there any    *
 		 * more available alarms or not).                            */
@@ -158,9 +208,9 @@ void App_setAlarm(void){
 			alarms[(int)firstAvailableAlarm].flag = TRUE;
 			/* setting up the LCD to display the choices of the *
 			 * user.                                            */
-			LCD_moveCursor(2 , 9);
-			LCD_displayCharacter(':');
-			LCD_moveCursor(2 , 7);
+			RTE_LCD_moveCursor(2 , 9);
+			RTE_LCD_displayCharacter(':');
+			RTE_LCD_moveCursor(2 , 7);
 			/* looping to get the minutes and seconds then saving *
 			 * them.                                              */
 			for(placeCnt = 4 ; placeCnt>0 ; placeCnt--){
@@ -172,10 +222,10 @@ void App_setAlarm(void){
 					 * 6 or not.                              */
 					do{
 						/* getting the minute's tens from the user */
-						keypad_readBuffer = KEYPAD_getPressedKey();
+						keypad_readBuffer = RTE_KEYPAD_getPressedKey();
 						/* displaying the user choice */
-						LCD_moveCursor(2 , 7);
-						LCD_integerToString(keypad_readBuffer);
+						RTE_LCD_moveCursor(2 , 7);
+						RTE_LCD_integerToString(keypad_readBuffer);
 						/*saving the minute's tens in the array *
 						 * of the minutes and seconds that are  *
 						 * specific to this alarm.              */
@@ -183,9 +233,9 @@ void App_setAlarm(void){
 					}while((keypad_readBuffer > MAX_MINUTES_TENS));
 				} else if(placeCnt == 3){
 					do{
-						keypad_readBuffer = KEYPAD_getPressedKey();
-						LCD_moveCursor(2 , 8);
-						LCD_integerToString(keypad_readBuffer);
+						keypad_readBuffer = RTE_KEYPAD_getPressedKey();
+						RTE_LCD_moveCursor(2 , 8);
+						RTE_LCD_integerToString(keypad_readBuffer);
 						alarms[(int)firstAvailableAlarm].alarmDigits[1] = keypad_readBuffer;
 					}while(((keypad_readBuffer != 0) &&(alarms[(int)firstAvailableAlarm].alarmDigits[0] == 6)));
 					tempCnt = alarms[(int)firstAvailableAlarm].alarmDigits[0] * 10
@@ -193,28 +243,28 @@ void App_setAlarm(void){
 					alarms[(int)firstAvailableAlarm].secCnt += tempCnt*60;
 				} else if(placeCnt == 2){
 					do{
-						keypad_readBuffer = KEYPAD_getPressedKey();
-						LCD_moveCursor(2 , 10);
-						LCD_integerToString(keypad_readBuffer);
+						keypad_readBuffer = RTE_KEYPAD_getPressedKey();
+						RTE_LCD_moveCursor(2 , 10);
+						RTE_LCD_integerToString(keypad_readBuffer);
 						alarms[(int)firstAvailableAlarm].alarmDigits[2] = keypad_readBuffer;
 					}while((keypad_readBuffer > 6));
 				} else if(placeCnt == 1){
 					do{
-						keypad_readBuffer = KEYPAD_getPressedKey();
-						LCD_moveCursor(2 , 11);
-						LCD_integerToString(keypad_readBuffer);
+						keypad_readBuffer = RTE_KEYPAD_getPressedKey();
+						RTE_LCD_moveCursor(2 , 11);
+						RTE_LCD_integerToString(keypad_readBuffer);
 						alarms[(int)firstAvailableAlarm].alarmDigits[3] = keypad_readBuffer;
 					}while(((keypad_readBuffer != 0) &&(alarms[(int)firstAvailableAlarm].alarmDigits[2] == 6)));
 					alarms[(int)firstAvailableAlarm].secCnt += (alarms[(int)firstAvailableAlarm].alarmDigits[2] * 10)
-										        				+ alarms[(int)firstAvailableAlarm].alarmDigits[3];
+										        								+ alarms[(int)firstAvailableAlarm].alarmDigits[3];
 				}
 			}
 		} else{
-			LCD_clearScreen();
-			LCD_moveCursor(1,0);
-			LCD_displayString("no more available");
-			LCD_moveCursor(2,0);
-			LCD_displayString("alarms");
+			RTE_LCD_clearScreen();
+			RTE_LCD_moveCursor(1,0);
+			RTE_LCD_displayString("no more available");
+			RTE_LCD_moveCursor(2,0);
+			RTE_LCD_displayString("alarms");
 		}
 		_delay_ms(500);
 	} else{
@@ -226,37 +276,39 @@ void App_listAlarm(void){
 	uint8 lcd_row = 0;
 	uint8 alarmListChoiceCancel;
 	uint8 noAlarmsFlag = FALSE;
-	LCD_clearScreen();
-	LCD_moveCursor(1,3);
-	LCD_displayString("0.[show]");
-	LCD_moveCursor(2,3);
-	LCD_displayString("%.[close]");
+	RTE_LCD_clearScreen();
+	RTE_LCD_moveCursor(1,3);
+	RTE_LCD_displayString("0.[show]");
+	RTE_LCD_moveCursor(2,3);
+	RTE_LCD_displayString("/.[close]");
 	do{
-		alarmListChoiceCancel = KEYPAD_getPressedKey();
-		if(alarmListChoiceCancel != '%'){ /* this check for the first time*/
-			LCD_clearScreen();
+		alarmListChoiceCancel = RTE_KEYPAD_getPressedKey();
+		if(alarmListChoiceCancel != CLOSE){ /* this check for the first time*/
+			RTE_LCD_clearScreen();
 			if(!(alarms[0].flag || alarms[1].flag || alarms[2].flag || alarms[3].flag)){
-				LCD_displayString("no alarms are set yet");
+				RTE_LCD_displayString("no alarms are set");
+				RTE_LCD_moveCursor(1,0);
+				RTE_LCD_displayString("yet.");
 				_delay_ms(1000);
 				noAlarmsFlag = TRUE;
 			} else{
 				for(uint8 i =0 ; i<MaximumAlarms ; i++){
 					if(alarms[(int)i].flag){
-						LCD_moveCursor(lcd_row++ , 0);
-						LCD_displayString("Alarm: ");
-						LCD_integerToString(i);
-						LCD_displayString(" -> ");
-						LCD_integerToString(alarms[(int)i].alarmDigits[0]);
-						LCD_integerToString(alarms[(int)i].alarmDigits[1]);
-						LCD_displayCharacter(':');
-						LCD_integerToString(alarms[(int)i].alarmDigits[2]);
-						LCD_integerToString(alarms[(int)i].alarmDigits[3]);
+						RTE_LCD_moveCursor(lcd_row++ , 0);
+						RTE_LCD_displayString("Alarm: ");
+						RTE_LCD_integerToString(i);
+						RTE_LCD_displayString(" -> ");
+						RTE_LCD_integerToString(alarms[(int)i].alarmDigits[0]);
+						RTE_LCD_integerToString(alarms[(int)i].alarmDigits[1]);
+						RTE_LCD_displayCharacter(':');
+						RTE_LCD_integerToString(alarms[(int)i].alarmDigits[2]);
+						RTE_LCD_integerToString(alarms[(int)i].alarmDigits[3]);
 					}
 				}
 			}
 		}
 		lcd_row = 0;
-	}while(alarmListChoiceCancel != '%' && !(noAlarmsFlag));
+	}while(alarmListChoiceCancel != CLOSE && !(noAlarmsFlag));
 }
 
 void App_cancelAlarm(void){
@@ -264,58 +316,58 @@ void App_cancelAlarm(void){
 	uint8 lcd_row = 0;
 	uint8 alarmChosenFlag = FALSE;
 	uint8 cancelOrContinue = FALSE;
-	LCD_clearScreen();
-	LCD_moveCursor(0,0);
-	LCD_displayString("please choose:");
-	LCD_moveCursor(1,3);
-	LCD_displayString("0.[continue]");
-	LCD_moveCursor(2,3);
-	LCD_displayString("%.[close]");
-	cancelOrContinue = KEYPAD_getPressedKey();
+	RTE_LCD_clearScreen();
+	RTE_LCD_moveCursor(0,0);
+	RTE_LCD_displayString("please choose:");
+	RTE_LCD_moveCursor(1,3);
+	RTE_LCD_displayString("0.[continue]");
+	RTE_LCD_moveCursor(2,3);
+	RTE_LCD_displayString("/.[close]");
+	cancelOrContinue = RTE_KEYPAD_getPressedKey();
 	if(cancelOrContinue == CONTINUE){
 		if(!(alarms[0].flag || alarms[1].flag || alarms[2].flag || alarms[3].flag)){
-			LCD_clearScreen();
-			LCD_displayString("no alarms are set");
+			RTE_LCD_clearScreen();
+			RTE_LCD_displayString("no alarms are set");
 			_delay_ms(1000);
 		} else{
 			do{
 				if(alarmChosenFlag){
-					LCD_clearScreen();
-					LCD_displayString("you chose a un valid");
-					LCD_moveCursor(1,8);
-					LCD_displayString("ID");
-					LCD_moveCursor(2,3);
-					LCD_displayString("please choose:");
-					LCD_moveCursor(3,0);
-					LCD_displayString("0.[Yes]  %.[close]");
-					cancelOrContinue = KEYPAD_getPressedKey();
+					RTE_LCD_clearScreen();
+					RTE_LCD_displayString("you chose a un valid");
+					RTE_LCD_moveCursor(1,8);
+					RTE_LCD_displayString("ID");
+					RTE_LCD_moveCursor(2,3);
+					RTE_LCD_displayString("please choose:");
+					RTE_LCD_moveCursor(3,0);
+					RTE_LCD_displayString("0.[Yes]  %.[close]");
+					cancelOrContinue = RTE_KEYPAD_getPressedKey();
 				} else{
 					/* do nothing */
 				}
 				if(cancelOrContinue == CONTINUE){
-					LCD_clearScreen();
+					RTE_LCD_clearScreen();
 					for(uint8 i =0 ; i<MaximumAlarms ; i++){
 						if(alarms[(int)i].flag){
-							LCD_moveCursor(lcd_row++ , 0);
-							LCD_displayString("Alarm: ");
-							LCD_integerToString(i);
-							LCD_displayString(" -> ");
-							LCD_integerToString(alarms[(int)i].alarmDigits[0]);
-							LCD_integerToString(alarms[(int)i].alarmDigits[1]);
-							LCD_displayCharacter(':');
-							LCD_integerToString(alarms[(int)i].alarmDigits[2]);
-							LCD_integerToString(alarms[(int)i].alarmDigits[3]);
+							RTE_LCD_moveCursor(lcd_row++ , 0);
+							RTE_LCD_displayString("Alarm: ");
+							RTE_LCD_integerToString(i);
+							RTE_LCD_displayString(" -> ");
+							RTE_LCD_integerToString(alarms[(int)i].alarmDigits[0]);
+							RTE_LCD_integerToString(alarms[(int)i].alarmDigits[1]);
+							RTE_LCD_displayCharacter(':');
+							RTE_LCD_integerToString(alarms[(int)i].alarmDigits[2]);
+							RTE_LCD_integerToString(alarms[(int)i].alarmDigits[3]);
 						}
 					}
-					LCD_moveCursor(0,17);
-					LCD_displayCharacter('|');
-					LCD_moveCursor(1,17);
-					LCD_displayCharacter('|');
-					LCD_moveCursor(2,17);
-					LCD_displayCharacter('|');
-					LCD_moveCursor(3,17);
-					LCD_displayCharacter('|');
-					chosenAlarm = KEYPAD_getPressedKey();
+					RTE_LCD_moveCursor(0,17);
+					RTE_LCD_displayCharacter('|');
+					RTE_LCD_moveCursor(1,17);
+					RTE_LCD_displayCharacter('|');
+					RTE_LCD_moveCursor(2,17);
+					RTE_LCD_displayCharacter('|');
+					RTE_LCD_moveCursor(3,17);
+					RTE_LCD_displayCharacter('|');
+					chosenAlarm = RTE_KEYPAD_getPressedKey();
 					alarmChosenFlag = TRUE;
 				} else{
 					alarmChosenFlag = FALSE;
@@ -330,11 +382,11 @@ void App_cancelAlarm(void){
 				alarms[(int)chosenAlarm].alarmDigits[2] = 0;
 				alarms[(int)chosenAlarm].alarmDigits[3] = 0;
 				alarms[(int)chosenAlarm].secCnt = 0;
-				LCD_clearScreen();
-				LCD_moveCursor(1,0);
-				LCD_displayString("alarm ");
-				LCD_integerToString((int)chosenAlarm);
-				LCD_displayString(" is cancelled");
+				RTE_LCD_clearScreen();
+				RTE_LCD_moveCursor(1,0);
+				RTE_LCD_displayString("alarm ");
+				RTE_LCD_integerToString((int)chosenAlarm);
+				RTE_LCD_displayString(" is cancelled");
 				_delay_ms(2000);
 			}
 		}
@@ -346,7 +398,7 @@ void App_main(void){
 	uint8 mainMenuChoice = FALSE;
 	App_mainMenu();
 	do{
-		mainMenuChoice = KEYPAD_getPressedKey();
+		mainMenuChoice = RTE_KEYPAD_getPressedKey();
 	} while(!(mainMenuChoice == SET_ALARM_CHOICE ||
 			mainMenuChoice == CANCEL_ALARM_CHOICE ||
 			mainMenuChoice == ALARM_LIST_CHOICE));

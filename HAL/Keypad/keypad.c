@@ -25,10 +25,10 @@ uint8 ArrOfCols[4] = {PIN7_ID, PIN6_ID, PIN5_ID, PIN3_ID};
 
 /* Keypad character values */
 const uint8 KeyPad_Values[4][4] = {
-	{'1', '2', '3', '+'},
-	{'4', '5', '6', '-'},
-	{'7', '8', '9', '/'},
-	{'*', '0', '#', '='}
+	{1, 2, 3, '+'},
+	{4, 5, 6, '-'},
+	{7, 8, 9, '/'},
+	{'*', 0, '#', '='}
 };
 
 /* Initialize the keypad */
@@ -67,6 +67,9 @@ uint8 GetPresseKey(void) {
 				val = DIO_readPin(KEYPAD_COLUMN_PORT, ArrOfCols[j]);
 
 				if (val == 0) {
+					while(val == 0){
+						val = DIO_readPin(KEYPAD_COLUMN_PORT, ArrOfCols[j]);
+					}
 					/* Restore row configuration and return the key value */
 					DIO_setupPinDirection(KEYPAD_ROW_PORT, ArrOfRows[i], PIN_INPUT);
 					DIO_writePin(KEYPAD_ROW_PORT, ArrOfRows[i], LOGIC_HIGH);

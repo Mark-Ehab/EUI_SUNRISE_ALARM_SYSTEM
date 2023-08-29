@@ -5,10 +5,8 @@
 #ifndef APP_H_
 #define APP_H_
 
-#include "../HAL/LCD/AVR_LCD.h"
-#include "../HAL/Keypad/keypad.h"
+
 #include "../RTE/rte.h"
-#include "../Commons/std_types.h"
 #include <util/delay.h>
 
 #define AlarmInitialValue 0
@@ -25,7 +23,7 @@
 #define CANCEL_ALARM_CHOICE '-'
 #define ALARM_LIST_CHOICE '*'
 
-#define CLOSE '%'
+#define CLOSE '/'
 #define CONTINUE 0
 
 typedef enum{

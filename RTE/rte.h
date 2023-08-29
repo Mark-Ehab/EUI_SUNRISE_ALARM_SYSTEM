@@ -8,13 +8,19 @@
 #ifndef RTE_H_
 #define RTE_H_
 
-#define KEYPAD_init_ KeyPad_Init
-#define KEYPAD_getPressedKey GetPresseKey
-#define LCD_init_ LCD_init
-#define LCD_displayCharacter LCD_displayCharacter
-#define LCD_displayString LCD_displayString
-#define LCD_integerToString LCD_integerToString
-#define LCD_clearScreen LCD_clearScreen
+#include "../HAL/LCD/AVR_LCD.h"
+#include "../HAL/Keypad/keypad.h"
+#include "../Commons/std_types.h"
+#include "../HAL/LED/LED.h"
+
+#define RTE_KEYPAD_init KeyPad_Init
+#define RTE_KEYPAD_getPressedKey GetPresseKey
+#define RTE_LCD_init LCD_init
+#define RTE_LCD_displayCharacter LCD_displayCharacter
+#define RTE_LCD_displayString LCD_displayString
+#define RTE_LCD_integerToString LCD_integerToString
+#define RTE_LCD_clearScreen LCD_clearScreen
+#define RTE_LCD_moveCursor LCD_moveCursor
 
 
 #endif /* RTE_H_ */
