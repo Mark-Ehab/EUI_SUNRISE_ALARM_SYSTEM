@@ -210,7 +210,25 @@ void vector (void)
 #define OCF1B			3
 #define TOV1			2
 #define OCF0			1
-#define TOV0            0 
+#define TOV0            	0 
+
+/*************************Timer 1****************************/
+#define TCCR1A                                                               *((volatile uint8*)0x4F)  /* Timer/Counter1 Control Register A */
+#define TCCR1B                                                               *((volatile uint8*)0x4E)  /* Timer/Counter1 Control Register B */
+#define TCNT1H                                                               *((volatile uint8*)0x4D)  /* Timer/Counter1 High */
+#define TCNT1L                                                               *((volatile uint8*)0x4C)  /* Timer/Counter1 Low */
+#define OCR1AH                                                               *((volatile uint8*)0x4B)  /* Output Compare Register 1 A High */
+#define OCR1AL                                                               *((volatile uint8*)0x4A)  /* Output Compare Register 1 A Low */
+#define OCR1BH                                                               *((volatile uint8*)0x49)  /* Output Compare Register 1 B High */
+#define OCR1BL                                                               *((volatile uint8*)0x48)  /* Output Compare Register 1 B Low */
+#define ICR1H                                                                *((volatile uint8*)0x47)  /* Input Capture Register 1 High */
+#define ICR1L                                                                *((volatile uint8*)0x46)  /* Input Capture Register 1 Low */
+
+
+#define TCNT1	                                                             *((volatile uint16*)0x4C) /* Timer/Counter1 */
+#define OCR1A                                                                *((volatile uint16*)0x4A) /* Output Compare Register 1 A */
+#define OCR1B                                                                *((volatile uint16*)0x48) /* Output Compare Register 1 B */
+#define ICR1                                                                 *((volatile uint16*)0x46) /* Input Capture Register 1 */
 						
 #endif /* ATMEGA32_MAPPING_H_ */
 						
