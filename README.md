@@ -1,4 +1,4 @@
-# Sunrise Alarm Clock Project
+<font color="#012061">**Sunrise Alarm Clock Project**</font>
 
 This repository contains the source code and documentation for the Sunrise Alarm Clock project developed by MetaWare LLC.
 
