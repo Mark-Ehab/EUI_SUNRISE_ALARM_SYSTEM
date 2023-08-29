@@ -6,13 +6,7 @@ This repository contains the source code and documentation for the Sunrise Alarm
 
 The Sunrise Alarm Clock is a microcontroller-based project that simulates a natural sunrise to wake you up gradually and gently. The project utilizes various components, including an LCD display, a keypad for user interaction, an alarm functionality, a buzzer for alarm sounds, and an LDR (Light Dependent Resistor) to detect ambient light levels. The project was developed by the team at MetaWare LLC, consisting of:
 
-| Name                           | ID    |
-|--------------------------------|-------|
-| Mahmoud Sayed Mahmoud Helmy    | 1285  |
-| Mohamed Mahmoud Masoud         | 200   |
-| Mark Ehab Tawfik               | 201   |
-| Hazzem Mohamed Ezzeldin        | 1297  |
-| Yousef Khaled Ahmed            | 558   |
+![image](https://github.com/Mark-Ehab/EUI_SUNRISE_ALARM_SYSTEM/assets/52659572/a2179bbe-338e-414f-b08c-673b5cdf9644)
 
 
 ## Features
