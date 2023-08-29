@@ -88,6 +88,8 @@ Displays a list of active alarms:
 
 1. Users choose whether to view the list or return to the main menu.
 2. If viewed, all active alarms are listed.
+## Simple Simulation 
+![image](https://github.com/Mark-Ehab/EUI_SUNRISE_ALARM_SYSTEM/assets/52659572/55b653bb-4a3b-480b-8a14-547906814fc0)
 
 
 Developed with ❤️ by the MetaWare LLC team.
