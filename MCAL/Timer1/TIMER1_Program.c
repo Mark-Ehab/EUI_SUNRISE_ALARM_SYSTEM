@@ -360,78 +360,78 @@ void TIMER1_vidInit(void)
 	#elif TIMER1_MODE == PHASE_CORRECT_PWM_EIGHT_BIT_MODE
 		/* Set Timer1 to work in phase-correct PWM mode with 8-bit resolution */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_CORRECT_PWM_NINE_BIT_MODE
 		/* Set Timer1 to work in phase-correct PWM mode with 9-bit resolution */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_CORRECT_PWM_TEN_BIT_MODE
 		/* Set Timer1 to work in phase-correct PWM mode with 10-bit resolution */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == CTC_OCR1A_MODE
 		/* Set Timer1 to work in CTC mode with OCR1A value as top */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == FAST_PWM_EIGHT_BIT_MODE
 		/* Set Timer1 to work in FastPWM mode with 8-bit resolution */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == FAST_PWM_NINE_BIT_MODE
 		/* Set Timer1 to work in FastPWM mode with 9-bit resolution */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == FAST_PWM_TEN_BIT_MODE
 		/* Set Timer1 to work in FastPWM mode with 10-bit resolution */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
-		CLR_BIT(TCCR1B,TCCR1B_WGM13);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_FREQUENCY_CORRECT_PWM_ICR1_MODE
 		/* Set Timer1 to work in PWM Phase and Frequency Correct mode with ICR1 value as top */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_FREQUENCY_CORRECT_PWM_OCR1A_MODE
 		/* Set Timer1 to work in PWM Phase and Frequency Correct mode with OCR1A value as top */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_CORRECT_PWM_ICR1_MODE
 		/* Set Timer1 to work in phase-correct PWM with ICR1 value as top */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == PHASE_CORRECT_PWM_OCR1A_MODE
 		/* Set Timer1 to work in phase-correct PWM with OCR1A value as top */
 		SET_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
-		CLR_BIT(TCCR1B,TCCR1B_WGM12);
+		CLEAR_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == CTC_ICR1_MODE
 		/* Set Timer1 to work in CTC mode with ICR1 value as top */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
-		CLR_BIT(TCCR1A,TCCR1A_WGM11);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
 	#elif TIMER1_MODE == FAST_PWM_ICR1_MODE
 		/* Set Timer1 to work in FastPWM mode with ICR1 value as top */
-		CLR_BIT(TCCR1A,TCCR1A_WGM10);
+		CLEAR_BIT(TCCR1A,TCCR1A_WGM10);
 		SET_BIT(TCCR1A,TCCR1A_WGM11);
 		SET_BIT(TCCR1B,TCCR1B_WGM12);
 		SET_BIT(TCCR1B,TCCR1B_WGM13);
@@ -651,12 +651,12 @@ void TIMER1_vidInit(void)
 		/* Check selected Timer1 mode from config file */
 		#if TIMER1_MODE != PHASE_FREQUENCY_CORRECT_PWM_ICR1_MODE && TIMER1_MODE != PHASE_CORRECT_PWM_ICR1_MODE && TIMER1_MODE != CTC_ICR1_MODE && TIMER1_MODE != FAST_PWM_ICR1_MODE
 				/* Clear ICES1 Bit in TCCR1B */
-				CLR_BIT(TCCR1B,TCCR1B_ICES1);
+				CLEAR_BIT(TCCR1B,TCCR1B_ICES1);
 
 				/* Check Timer1 Input Capture Event Trigger Edge Type */
 				#if   TIMER1_ICU_TRIGGER_EDGE == FALLING_EDGE
 					/* Set Timer1 Input Capture Event Trigger Edge as Falling Edge */
-					CLR_BIT(TCCR1B,TCCR1B_ICES1);
+					CLEAR_BIT(TCCR1B,TCCR1B_ICES1);
 				#elif TIMER1_ICU_TRIGGER_EDGE == RISING_EDGE
 					/* Set Timer1 Input Capture Event Trigger Edge as Rising Edge */
 					SET_BIT(TCCR1B,TCCR1B_ICES1);
@@ -674,7 +674,7 @@ void TIMER1_vidInit(void)
 				SET_BIT(TIMSK,TIMSK_TOIE1);
 	#elif TIMER1_OVERFLOW_INTERRUPT_ENABLE == DISABLE
 				/* Disable Timer1 Overflow Interrupt */
-				CLR_BIT(TIMSK,TIMSK_TOIE1);
+				CLEAR_BIT(TIMSK,TIMSK_TOIE1);
 	#else
 		#error "Wrong Timer1 Overflow Interrupt Enable Signal Configuration !"
 	#endif
@@ -685,7 +685,7 @@ void TIMER1_vidInit(void)
 				SET_BIT(TIMSK,TIMSK_OCIE1A);
 	#elif TIMER1_COMPARE_MATCH_A_INTERRUPT_ENABLE == DISABLE
 				/* Disable Timer1 compare match for channel A interrupt */
-				CLR_BIT(TIMSK,TIMSK_OCIE1A);
+				CLEAR_BIT(TIMSK,TIMSK_OCIE1A);
 	#else
 		#error "Wrong Timer1 Compare Match for Channel A Interrupt Enable Signal Configuration !"
 	#endif
@@ -696,7 +696,7 @@ void TIMER1_vidInit(void)
 				SET_BIT(TIMSK,TIMSK_OCIE1B);
 	#elif TIMER1_COMPARE_MATCH_B_INTERRUPT_ENABLE == DISABLE
 				/* Disable Timer1 compare match for channel B interrupt */
-				CLR_BIT(TIMSK,TIMSK_OCIE1B);
+				CLEAR_BIT(TIMSK,TIMSK_OCIE1B);
 	#else
 		#error "Wrong Timer1 Compare Match for Channel B Interrupt Enable Signal Configuration !"
 	#endif
@@ -707,7 +707,7 @@ void TIMER1_vidInit(void)
 				SET_BIT(TIMSK,TIMSK_TICIE1);
 	#elif TIMER1_CAPTURE_EVENT_INTERRUPT_ENABLE == DISABLE
 				/* Disable Timer1 capture event interrupt */
-				CLR_BIT(TIMSK,TIMSK_TICIE1);
+				CLEAR_BIT(TIMSK,TIMSK_TICIE1);
 	#else
 		#error
 	#endif
@@ -837,7 +837,7 @@ void TIMER1_vidEnableOverflowInterrupt(void)
 void TIMER1_vidDisableOverflowInterrupt(void)
 {
 	/* Disable Timer1 Overflow Interrupt */
-	CLR_BIT(TIMSK,TIMSK_TOIE1);
+	CLEAR_BIT(TIMSK,TIMSK_TOIE1);
 }
 /**********************************************************************************/
 /* Description     : Enable Timer1 Compare Match A Interrupt		          */
@@ -857,7 +857,7 @@ void TIMER1_vidEnableCompareMatchAInterrupt(void)
 void TIMER1_vidDisableCompareMatchAInterrupt(void)
 {
 	/* Disable Timer1 compare match for channel A interrupt */
-	CLR_BIT(TIMSK,TIMSK_OCIE1A);
+	CLEAR_BIT(TIMSK,TIMSK_OCIE1A);
 }
 /**********************************************************************************/
 /* Description     : Enable Timer1 Compare Match B Interrupt		          */
@@ -877,7 +877,7 @@ void TIMER1_vidEnableCompareMatchBInterrupt(void)
 void TIMER1_vidDisableCompareMatchBInterrupt(void)
 {
 	/* Disable Timer1 compare match for channel B interrupt */
-	CLR_BIT(TIMSK,TIMSK_OCIE1B);
+	CLEAR_BIT(TIMSK,TIMSK_OCIE1B);
 }
 /**********************************************************************************/
 /* Description     : Enable Timer1 Capture Event Interrupt		          */
@@ -897,7 +897,7 @@ void TIMER1_vidEnableCaptureEventInterrupt(void)
 void TIMER1_vidDisableCaptureEventInterrupt(void)
 {
 	/* Disable Timer1 capture event interrupt */
-	CLR_BIT(TIMSK,TIMSK_TICIE1);
+	CLEAR_BIT(TIMSK,TIMSK_TICIE1);
 }
 /**********************************************************************************/
 /* Description     : Set Timer1 Input Capture Event Trigger Edge 		  */
@@ -915,7 +915,7 @@ uint8 TIMER1_uint8SetInputCaptureEventEdge(TIMER1_ICUTriggerEdge_e Copy_EdgeType
 	Local_uint8TCCR1BTemp = TCCR1B;
 
 	/* Clear ICES1 Bit in TCCR1B */
-	CLR_BIT(Local_uint8TCCR1BTemp,TCCR1B_ICES1);
+	CLEAR_BIT(Local_uint8TCCR1BTemp,TCCR1B_ICES1);
 
 	/* Check if passed value is valid or not */
 	switch(Copy_EdgeType_e)
@@ -923,7 +923,7 @@ uint8 TIMER1_uint8SetInputCaptureEventEdge(TIMER1_ICUTriggerEdge_e Copy_EdgeType
 	case TIMER1_ICU_FALLING_EDGE:
 
 		/* Set Timer1 Input Capture Event Trigger Edge as Falling Edge */
-		CLR_BIT(Local_uint8TCCR1BTemp,TCCR1B_ICES1);
+		CLEAR_BIT(Local_uint8TCCR1BTemp,TCCR1B_ICES1);
 
 		/* Write Modified Value of Local_uint8TCCR1BTemp Back Again to TCCR1B Register */
 		TCCR1B = Local_uint8TCCR1BTemp;
