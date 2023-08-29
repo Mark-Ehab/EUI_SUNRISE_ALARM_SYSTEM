@@ -8,6 +8,8 @@ The Sunrise Alarm Clock is a microcontroller-based project that simulates a natu
 
 ![image](https://github.com/Mark-Ehab/EUI_SUNRISE_ALARM_SYSTEM/assets/52659572/a2179bbe-338e-414f-b08c-673b5cdf9644)
 
+## Layer Architecture 
+![image](https://github.com/Mark-Ehab/EUI_SUNRISE_ALARM_SYSTEM/assets/52659572/3acb0392-6fdc-4d2b-9a77-4360b85bc207)
 
 ## Features
 
