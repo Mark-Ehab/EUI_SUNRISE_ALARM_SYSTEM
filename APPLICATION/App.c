@@ -69,7 +69,7 @@ void interrupt_function(void)
 			alarms[0].secCnt--;
 		}
 	}
-	else if(alarms[1].flag == TRUE)
+	if(alarms[1].flag == TRUE)
 	{
 		if(alarms[1].secCnt == 0)
 		{
@@ -81,7 +81,7 @@ void interrupt_function(void)
 			alarms[1].secCnt--;
 		}
 	}
-	else if(alarms[2].flag == TRUE)
+	if(alarms[2].flag == TRUE)
 	{
 		if(alarms[2].secCnt == 0)
 		{
@@ -93,7 +93,7 @@ void interrupt_function(void)
 			alarms[2].secCnt--;
 		}
 	}
-	else if(alarms[3].flag == TRUE)
+	if(alarms[3].flag == TRUE)
 	{
 		if(alarms[3].secCnt == 0)
 		{
