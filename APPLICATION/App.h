@@ -6,8 +6,8 @@
 #define APP_H_
 
 
-#include "../RTE/rte.h"
 #include <util/delay.h>
+#include "../RTE/RTE.h"
 
 #define AlarmInitialValue 0
 #define MaximumAlarms 4

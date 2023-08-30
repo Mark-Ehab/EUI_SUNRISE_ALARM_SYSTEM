@@ -9,7 +9,7 @@
 #ifndef HAL_LDR_CONFIG_H_
 #define HAL_LDR_CONFIG_H_
 
-#include "atmega32_DIO.h"
+#include "../../MCAL/DIO/atmega32_DIO.h"
 
 /************************************************************************/
 /* Select the port for LDR to operate on:- 				*/

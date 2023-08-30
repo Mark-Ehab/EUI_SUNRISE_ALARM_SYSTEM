@@ -19,8 +19,8 @@
 #include "../../Commons/Macros.h"
 #include "../../Commons/std_types.h"
 #include "../../Commons/atmega32_mapping.h"
-#include "Timer_Cfg.h"
-#include "Timer_Private.h"
+#include "Timer0_Cfg.h"
+#include "Timer0_Private.h"
 
 /*-----------------------------------------------------------------------------------*/
 /*                                                                                   */

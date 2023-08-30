@@ -8,7 +8,7 @@
 #ifndef BUZZER_H_
 #define BUZZER_H_
 
-#include "atmega32_DIO.h"
+#include "../../MCAL/DIO/atmega32_DIO.h"
 
 
 #define BUZZER_PORT		PORTC_ID

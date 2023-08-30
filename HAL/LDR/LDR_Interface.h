@@ -9,11 +9,11 @@
 #ifndef HAL_LDR_INTERFACE_H_
 #define HAL_LDR_INTERFACE_H_
 
-#include "std_types.h"
-#include "Adc.h"
+#include "../../Commons/std_types.h"
+#include "../../MCAL/ADC/Adc.h"
 #include "LDR_Config.h"
 
-#define VREF_MV 					5000UL
+#define VREF_MV 			5000UL
 #define TWO_POWER_RESOLUTION		1024UL
 
 /*-----------------------------------------------------------------------------------*/
