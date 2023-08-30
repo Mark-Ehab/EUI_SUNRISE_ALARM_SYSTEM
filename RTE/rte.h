@@ -70,6 +70,32 @@
 
 
 /* Timer1 Module RTE Services */
+#define RTE_TIMER1_vidInit                             TIMER1_vidInit
+#define RTE_TIMER1_vidStart                            TIMER1_vidStart
+#define RTE_TIMER1_vidStop                             TIMER1_vidStop
+#define RTE_TIMER1_vidSetPreloadValue                  TIMER1_vidSetPreloadValue
+#define RTE_TIMER1_vidSetCompareMatchAValue            TIMER1_vidSetCompareMatchAValue
+#define RTE_TIMER1_vidSetCompareMatchBValue            TIMER1_vidSetCompareMatchBValue
+#define RTE_TIMER1_vidSetInputCaptureValue             TIMER1_vidSetInputCaptureValue
+#define RTE_TIMER1_uint16ReadTimerValue(void);         TIMER1_uint16ReadTimerValue(void);
+#define RTE_TIMER1_uint16ReadInputCaptureValue         TIMER1_uint16ReadInputCaptureValue
+#define RTE_TIMER1_vidEnableOverflowInterrupt          TIMER1_vidEnableOverflowInterrupt
+#define RTE_TIMER1_vidDisableOverflowInterrupt         TIMER1_vidDisableOverflowInterrupt
+#define RTE_TIMER1_vidEnableCompareMatchAInterrupt     TIMER1_vidEnableCompareMatchAInterrupt
+#define RTE_TIMER1_vidDisableCompareMatchAInterrupt    TIMER1_vidDisableCompareMatchAInterrupt
+#define RTE_TIMER1_vidEnableCompareMatchBInterrupt     TIMER1_vidEnableCompareMatchBInterrupt
+#define RTE_TIMER1_vidDisableCompareMatchBInterrupt    TIMER1_vidDisableCompareMatchBInterrupt
+#define RTE_TIMER1_vidEnableCaptureEventInterrupt      TIMER1_vidEnableCaptureEventInterrupt
+#define RTE_TIMER1_vidDisableCaptureEventInterrupt     TIMER1_vidDisableCaptureEventInterrupt
+#define RTE_TIMER1_uint8SetInputCaptureEventEdge       TIMER1_uint8SetInputCaptureEventEdge
+#define RTE_TIMER1_uint8SetOverflowCallback            TIMER1_uint8SetOverflowCallback
+#define RTE_TIMER1_uint8SetCompareMatchACallback       TIMER1_uint8SetCompareMatchACallback
+#define RTE_TIMER1_uint8SetCompareMatchBCallback       TIMER1_uint8SetCompareMatchBCallback
+#define RTE_TIMER1_uint8SetCaptureEventCallback        TIMER1_uint8SetCaptureEventCallback
+#define RTE_TIMER1_uint8SetBusyWait_ms                 TIMER1_uint8SetBusyWait_ms
+#define RTE_TIMER1_uint8StartPWMChannelA               TIMER1_uint8StartPWMChannelA
+#define RTE_TIMER1_uint8StartPWMChannelB               TIMER1_uint8StartPWMChannelB
+
 
 
 #endif /* RTE_H_ */
