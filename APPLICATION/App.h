@@ -7,6 +7,7 @@
 
 
 #include <util/delay.h>
+#include "App_Cfg.h"
 #include "../RTE/RTE.h"
 
 #define AlarmInitialValue 0
@@ -42,5 +43,6 @@ void App_setAlarm(void);
 void App_listAlarm(void);
 void App_cancelAlarm(void);
 void App_main(void);
+void App_welcomeScreen(void);
 
 #endif /* APP_H_ */

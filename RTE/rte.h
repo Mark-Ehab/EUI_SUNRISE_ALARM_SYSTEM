@@ -77,7 +77,7 @@
 #define RTE_TIMER1_vidSetCompareMatchAValue            TIMER1_vidSetCompareMatchAValue
 #define RTE_TIMER1_vidSetCompareMatchBValue            TIMER1_vidSetCompareMatchBValue
 #define RTE_TIMER1_vidSetInputCaptureValue             TIMER1_vidSetInputCaptureValue
-#define RTE_TIMER1_uint16ReadTimerValue       	       TIMER1_uint16ReadTimerValue
+#define RTE_TIMER1_uint16ReadTimerValue       	       TIMER1_uint16ReadTimerValue(void);
 #define RTE_TIMER1_uint16ReadInputCaptureValue         TIMER1_uint16ReadInputCaptureValue
 #define RTE_TIMER1_vidEnableOverflowInterrupt          TIMER1_vidEnableOverflowInterrupt
 #define RTE_TIMER1_vidDisableOverflowInterrupt         TIMER1_vidDisableOverflowInterrupt

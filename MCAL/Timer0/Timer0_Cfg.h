@@ -28,7 +28,7 @@
  	     - CTC_MODE
  	     - FAST_PWM_MODE
  =============================================================================================================*/
-#define TIMER0_MODE OVERFLOW_MODE /* Default: OVERFLOW_MODE */
+#define TIMER0_MODE FAST_PWM_MODE /* Default: OVERFLOW_MODE */
 
 /* =============================================================================================================
                              Set Mode of Timer0 Output Compare Match Pin (Non-PWM)

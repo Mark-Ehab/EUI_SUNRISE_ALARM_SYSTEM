@@ -12,7 +12,7 @@
 /*********************************************************/
 /* Set AVR ATmega32 Clock Frequency			 */
 /*********************************************************/
-#define TIMER1_MCU_CLK_FREQ 8000000UL /* Default: 8000000UL */
+#define TIMER1_MCU_CLK_FREQ 16000000UL /* Default: 8000000UL */
 /*********************************************************/
 /* Set Timer1 Operating Mode :-				 */
 /* 		         	                         */
@@ -33,7 +33,7 @@
 /*	     - FAST_PWM_OCR1A_MODE		         */
 /* 	                          		 	 */
 /*********************************************************/
-#define TIMER1_MODE OVERFLOW_MODE /* Default: OVERFLOW_MODE */
+#define TIMER1_MODE CTC_OCR1A_MODE /* Default: OVERFLOW_MODE */
 /*********************************************************/
 /* Select Timer1 Output Compare Match Channel:-		 */
 /* 		         	                         */
@@ -150,7 +150,7 @@
 /* 	     - DISABLE                                   */
 /* 	                          		 	 */
 /*********************************************************/
-#define TIMER1_COMPARE_MATCH_A_INTERRUPT_ENABLE DISABLE /* Default : DISABLE */
+#define TIMER1_COMPARE_MATCH_A_INTERRUPT_ENABLE ENABLE /* Default : DISABLE */
 /*********************************************************/
 /* Enable/Disable Timer/Counter1 Compare Match B	 */
 /* Interrupt :- 	 				 */
@@ -187,6 +187,6 @@
 /*	     Timer1 as counter				 */
 /*							 */
 /*********************************************************/
-#define TIMER1_PRESCALER CLK_DIV_BY_8 /* Default: CLK_DIV_BY_8 */
+#define TIMER1_PRESCALER CLK_DIV_BY_1024 /* Default: CLK_DIV_BY_8 */
 
 #endif /* MCAL_TIMER1_CONFIG_H_ */
