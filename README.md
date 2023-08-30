@@ -44,9 +44,8 @@ we make sure to keep the math equations relatively simple and solvable within a 
 
 ### Functions
 
-bash```
-actionToBeTaken()
-```: Displays a message corresponding to the fired alarm.
+
+- `actionToBeTaken()`: Displays a message corresponding to the fired alarm.
 - `interrupt_function()`: Handles alarm firing based on the configured time.
 - `App_init()`: Initializes LCD and keypad.
 - `App_mainMenu()`: Displays the main menu options.
