@@ -1,15 +1,7 @@
-/*
- * Team: Metaware
- * */
-
-#include "APPLICATION/App.h"
-
+#include "Application/App.h"
 
 int main()
 {
-//	App_welcomeScreen();
-	App_init();
-	while(TRUE){
-		App_main();
-	}
+    App_Init();
+    App();
 }
