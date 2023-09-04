@@ -346,7 +346,7 @@ uint8 App_setAlarm()
 
             RTE_LCD_displayString("Number of Alarms limit exceeded");
             _delay_ms(500);
-            exit_Flag = 1;
+            exit_Flag = TRUE;
             /*Exit the main loop, no alarm has been found*/
             continue;
         }
@@ -383,7 +383,7 @@ uint8 App_setAlarm()
                     else
                         RTE_LCD_moveCursor(2, 10 - alarmindex);
                 }
-                while ((keypadBuffer > 9) || (keypadBuffer < 0));
+                while ((keypadBuffer > ONES_OF_SEC_OR_MIN) || (keypadBuffer < 0));
                 /*While loop is restricted by not entering a number bigger
                  * than 9 or smaller than 0 in the ones fields, otherwise the
                  * user input will be rejected and the loop iterates again*/
@@ -410,7 +410,7 @@ uint8 App_setAlarm()
                         RTE_LCD_moveCursor(2, 10 - alarmindex);
 
                 }
-                while (keypadBuffer > 5 || keypadBuffer < 0);
+                while (keypadBuffer > TENS_OF_SEC_OR_MIN || keypadBuffer < 0);
                 /*While loop is restricted by not entering a number bigger
                  * than 5 or smaller than 0 in the tens fields, otherwise the
                  * user input will be rejected and the loop iterates again*/
@@ -483,7 +483,7 @@ uint8 App_setAlarm()
             alarms[indexOfFirstavailablealarm].flag = TRUE;
             /*Timer 1 Start*/
             RTE_TIMER1_vidStart();
-            exit_Flag = 1;
+            exit_Flag = TRUE;
             /*Returning the index of taken alarm*/
             return indexOfFirstavailablealarm;
         }
@@ -494,7 +494,7 @@ uint8 App_setAlarm()
         /*Exit to the main menu case*/
         else if (keypadBuffer == EXIT)
         {
-            exit_Flag = 1;
+            exit_Flag = TRUE;
             return CANCELLED;
         }
         /*Unexpected error*/
@@ -540,35 +540,35 @@ STATUS App_cancelAlarm()
 
     RTE_LCD_clearScreen();
 
-    uint8 i, keypadBuffer;
+    uint8 alarmindex, keypadBuffer;
 
-    for (i = 0; i < MaximumAlarms; i++)
+    for (alarmindex = 0; alarmindex < MaximumAlarms; alarmindex++)
 
     {
-        if (alarms[i].flag == TRUE)
+        if (alarms[alarmindex].flag == TRUE)
         {
 
-            RTE_LCD_moveCursor(i, 0);
+            RTE_LCD_moveCursor(alarmindex, 0);
             RTE_LCD_displayString("Alarm");
-            RTE_LCD_moveCursor(i, 6);
-            RTE_LCD_integerToString(i);
-            RTE_LCD_moveCursor(i, 8);
+            RTE_LCD_moveCursor(alarmindex, 6);
+            RTE_LCD_integerToString(alarmindex);
+            RTE_LCD_moveCursor(alarmindex, 8);
             RTE_LCD_displayString("-> ");
-            RTE_LCD_moveCursor(i, 13);
+            RTE_LCD_moveCursor(alarmindex, 13);
 
-            RTE_LCD_integerToString(alarms[i].alarmDigits[3]);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[2]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[3]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[2]);
             RTE_LCD_displayCharacter(':');
             /*LCD display "  :  " in coordinates in the middle of the screen*/
-            RTE_LCD_moveCursor(i, 16);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[1]);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[0]);
+            RTE_LCD_moveCursor(alarmindex, 16);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[1]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[0]);
         }
         else
         {
-            RTE_LCD_moveCursor(i, 0);
+            RTE_LCD_moveCursor(alarmindex, 0);
             RTE_LCD_displayString("Alarm ");
-            RTE_LCD_integerToString(i);
+            RTE_LCD_integerToString(alarmindex);
             RTE_LCD_displayString(" isn't set");
         }
 
@@ -586,32 +586,32 @@ STATUS App_cancelAlarm()
         return CANCELLED;
     }
 
-    for (i = 0; i < MaximumAlarms; i++)
+    for (alarmindex = 0; alarmindex < MaximumAlarms; alarmindex++)
     {
-        if (keypadBuffer == i)
+        if (keypadBuffer == alarmindex)
         {
-            if (alarms[i].flag == FALSE)
+            if (alarms[alarmindex].flag == FALSE)
             {
                 RTE_LCD_clearScreen();
                 RTE_LCD_displayString("Alarm ");
-                RTE_LCD_integerToString(i);
+                RTE_LCD_integerToString(alarmindex);
                 RTE_LCD_displayString(" is not set");
                 _delay_ms(1000);
             }
             else
             {
-                alarms[i].flag = FALSE;
-                alarms[i].flag = FALSE;
-                alarms[i].alarmDigits[0] = 0;
-                alarms[i].alarmDigits[1] = 0;
-                alarms[i].alarmDigits[2] = 0;
-                alarms[i].alarmDigits[3] = 0;
-                alarms[i].secCnt = 0;
+                alarms[alarmindex].flag = FALSE;
+                alarms[alarmindex].flag = FALSE;
+                alarms[alarmindex].alarmDigits[0] = 0;
+                alarms[alarmindex].alarmDigits[1] = 0;
+                alarms[alarmindex].alarmDigits[2] = 0;
+                alarms[alarmindex].alarmDigits[3] = 0;
+                alarms[alarmindex].secCnt = 0;
                 /*Here: Alarm digits is not deleted*/
                 RTE_LCD_clearScreen();
                 RTE_LCD_moveCursor(0, 0);
                 RTE_LCD_displayString("Alarm ");
-                RTE_LCD_integerToString(i);
+                RTE_LCD_integerToString(alarmindex);
                 RTE_LCD_displayString(" cancelled");
                 _delay_ms(2000);
             }
@@ -651,25 +651,25 @@ STATUS App_cancelAlarm()
 void Interrupt_function(void)
 {
     /*Iterating through alarms*/
-    for (uint8 i = 0; i < MaximumAlarms; i++)
+    for (uint8 alarmindex = 0; alarmindex < MaximumAlarms; alarmindex++)
     {
         /*Alarm flag is set i.e. an active alarm has been set*/
-        if (alarms[i].flag)
+        if (alarms[alarmindex].flag)
         {
             /*After decrementing the seconds count to 0 the alarm is fired*/
-            if (alarms[i].secCnt == 0)
+            if (alarms[alarmindex].secCnt == 0)
             {
                 /*Alarm has fired flag is set*/
                 g_alarmHasFired = TRUE;
                 /*Index of the fired alarm is saved*/
-                g_NowFiredAlarm = i;
+                g_NowFiredAlarm = alarmindex;
                 /*Alarm flag is cleared as it has already fired*/
-                alarms[i].flag = FALSE;
+                alarms[alarmindex].flag = FALSE;
 
             }
             /*Decrementing the number of seconds in each interrupt
              (happens every second) by timer 1 until it reaches zero*/
-            alarms[i].secCnt--;
+            alarms[alarmindex].secCnt--;
         }
 
     }
@@ -795,10 +795,10 @@ STATUS WakeUpCalculator()
     {
         userAnswer = 0;
 
-        for (uint8 i = 0; i < numOfDigits; i++)
+        for (uint8 digits = 0; digits < numOfDigits; digits++)
         {
             keyPadBuffer = RTE_KEYPAD_getPressedKey();
-            RTE_LCD_moveCursor(2, 17 + i);
+            RTE_LCD_moveCursor(2, 17 + digits);
             RTE_LCD_integerToString(keyPadBuffer);
             _delay_ms(80);
             userAnswer = userAnswer * 10 + keyPadBuffer;
@@ -821,7 +821,8 @@ STATUS WakeUpCalculator()
         }
 
     }
-    while (keyPadBuffer > 9 || keyPadBuffer < 0 || (answerCorrect == FALSE));
+    while (keyPadBuffer > ONES_OF_SEC_OR_MIN || keyPadBuffer < 0
+            || (answerCorrect == FALSE));
 
     /* RTE_LCD_moveCursor(2,17);
      RTE_LCD_integerToString(userAnswer);
@@ -848,37 +849,37 @@ STATUS App_listAlarm()
 
     RTE_LCD_clearScreen();
 
-    uint8 i, keypadBuffer;
+    uint8 alarmindex, keypadBuffer;
 
     /*Iterating through maximum alarms*/
-    for (i = 0; i < MaximumAlarms; i++)
+    for (alarmindex = 0; alarmindex < MaximumAlarms; alarmindex++)
     {
         /*Check to display only active alarms set*/
-        if (alarms[i].flag == TRUE)
+        if (alarms[alarmindex].flag == TRUE)
         {
             /*Displaying firstly Alarm -> on the LCD*/
-            RTE_LCD_moveCursor(i, 0);
+            RTE_LCD_moveCursor(alarmindex, 0);
             RTE_LCD_displayString("Alarm");
-            RTE_LCD_moveCursor(i, 6);
-            RTE_LCD_integerToString(i);
-            RTE_LCD_moveCursor(i, 8);
+            RTE_LCD_moveCursor(alarmindex, 6);
+            RTE_LCD_integerToString(alarmindex);
+            RTE_LCD_moveCursor(alarmindex, 8);
             RTE_LCD_displayString("-> ");
-            RTE_LCD_moveCursor(i, 13);
+            RTE_LCD_moveCursor(alarmindex, 13);
             /*Displaying the set alarms saved in the global array*/
-            RTE_LCD_integerToString(alarms[i].alarmDigits[3]);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[2]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[3]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[2]);
             RTE_LCD_displayCharacter(':');
             /*LCD display "  :  " in coordinates in the middle of the screen*/
-            RTE_LCD_moveCursor(i, 16);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[1]);
-            RTE_LCD_integerToString(alarms[i].alarmDigits[0]);
+            RTE_LCD_moveCursor(alarmindex, 16);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[1]);
+            RTE_LCD_integerToString(alarms[alarmindex].alarmDigits[0]);
         }
         /*The alarm with the associated index isn't set*/
         else
         {
-            RTE_LCD_moveCursor(i, 0);
+            RTE_LCD_moveCursor(alarmindex, 0);
             RTE_LCD_displayString("Alarm ");
-            RTE_LCD_integerToString(i);
+            RTE_LCD_integerToString(alarmindex);
             RTE_LCD_displayString(" isn't set");
         }
 
@@ -1072,4 +1073,3 @@ void App_welcomeScreen()
     LCD_displayString(START_PROJ);
     _delay_ms(700); /* Delay for 2 seconds */
 }
-
