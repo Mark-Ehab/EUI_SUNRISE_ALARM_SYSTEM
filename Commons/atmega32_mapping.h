@@ -177,7 +177,6 @@ void vector (void)
  * 							Timers
  * =============================================================*/
 
-
 #define OCR0  *((volatile uint8*) 0x5C)
 #define TCCR0  *((volatile uint8*) 0x53)
 #define FOC0            7
@@ -210,8 +209,7 @@ void vector (void)
 #define OCF1B			3
 #define TOV1			2
 #define OCF0			1
-#define TOV0            	0 
-
+#define TOV0            0 
 /*************************Timer 1****************************/
 #define TCCR1A                                                               *((volatile uint8*)0x4F)  /* Timer/Counter1 Control Register A */
 #define TCCR1B                                                               *((volatile uint8*)0x4E)  /* Timer/Counter1 Control Register B */
@@ -229,7 +227,7 @@ void vector (void)
 #define OCR1A                                                                *((volatile uint16*)0x4A) /* Output Compare Register 1 A */
 #define OCR1B                                                                *((volatile uint16*)0x48) /* Output Compare Register 1 B */
 #define ICR1                                                                 *((volatile uint16*)0x46) /* Input Capture Register 1 */
-						
+
 #endif /* ATMEGA32_MAPPING_H_ */
 						
 						

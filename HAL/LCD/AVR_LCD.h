@@ -1,13 +1,20 @@
-/********************************************************************/
-/*      SWC     : AVR_LCD.h	                                        */
-/*      Date    : 8/26/2023                                         */
-/*      Authors : MetaWare LLC                                      */
-/*				  Mahmoud Sayed Mahmoud Helmy (1285)                */
-/*		          Mohamed Mahmoud Masoud (200)                      */
-/*		          Mark Ehab Tawfik (201)                            */
-/*		          Hazzem Mohamed Ezzeldin (1297)                    */
-/*		          Yousef Khaled Ahmed (558)                         */
-/********************************************************************/
+/*================================================================
+					  _      ____  ____                       
+					 | |    / ___||  _ \                      
+					 | |   | |    | | | |                     
+					 | |___| |___ | |_| |                     
+					 |_____|\____||____/                      
+                        
+/*================================================================*/				  
+/*      HAL     : LCD                      
+/*      Date    : 8/26/2023                                        
+/*      Authors : MetaWare LLC                                     
+/*				  Mahmoud Sayed Mahmoud Helmy (1285)               
+/*		          Mohamed Mahmoud Masoud (200)                     
+/*		          Mark Ehab Tawfik (201)                           
+/*		          Hazzem Mohamed Ezzeldin (1297)                   
+/*		          Yousef Khaled Ahmed (558)                        
+/*================================================================*/
 /* =============================================================
  * 							File Guard
  * =============================================================*/
@@ -56,6 +63,31 @@
 
 #endif
 
+#define LCD_ROW_0 0
+#define LCD_ROW_1 1
+#define LCD_ROW_2 2
+#define LCD_ROW_3 3
+
+#define LCD_COLUMN_0 0
+#define LCD_COLUMN_1 1
+#define LCD_COLUMN_2 2
+#define LCD_COLUMN_3 3
+#define LCD_COLUMN_4 4
+#define LCD_COLUMN_5 5
+#define LCD_COLUMN_6 6
+#define LCD_COLUMN_7 7
+#define LCD_COLUMN_8 8
+#define LCD_COLUMN_9 9
+#define LCD_COLUMN_10 10
+#define LCD_COLUMN_11 11
+#define LCD_COLUMN_12 12
+#define LCD_COLUMN_13 13
+#define LCD_COLUMN_14 14
+#define LCD_COLUMN_15 15
+#define LCD_COLUMN_16 16
+#define LCD_COLUMN_17 17
+#define LCD_COLUMN_18 18
+#define LCD_COLUMN_19 19
 
 /* =============================================================
  * 							LCD Pins

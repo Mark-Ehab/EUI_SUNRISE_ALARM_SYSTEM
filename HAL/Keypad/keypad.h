@@ -20,6 +20,7 @@
 #include "keypad_cfg.h"
 #include "../../Commons/std_types.h"
 #include "../../MCAL/DIO/atmega32_DIO.h"
+extern volatile uint8 g_alarmHasFired;
 /* =============================================================
  * 						Function Prototypes
  * =============================================================*/
@@ -39,8 +40,5 @@ void KeyPad_Init(void);
  * @return The ASCII value of the pressed key. If no key is pressed, returns 0.
  */
 uint8 GetPresseKey(void);
-
-extern volatile uint8 g_alarmHasFired;
-STATUS alarmAction(void);
 
 #endif /* KEYPAD_H_ */

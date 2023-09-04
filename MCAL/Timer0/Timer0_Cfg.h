@@ -1,13 +1,20 @@
-/********************************************************************/
-/*      SWC     : Timer_Cfg.h	                                    */
-/*      Date    : 8/26/2023                                         */
-/*      Authors : MetaWare LLC                                      */
-/*				  Mahmoud Sayed Mahmoud Helmy (1285)                */
-/*		          Mohamed Mahmoud Masoud (200)                      */
-/*		          Mark Ehab Tawfik (201)                            */
-/*		          Hazzem Mohamed Ezzeldin (1297)                    */
-/*		          Yousef Khaled Ahmed (558)                         */
-/********************************************************************/
+/*================================================================
+		  _____  _                          ___  
+		 |_   _|(_) _ __ ___    ___  _ __  / _ \ 
+		   | |  | || '_ ` _ \  / _ \| '__|| | | |
+		   | |  | || | | | | ||  __/| |   | |_| |
+		   |_|  |_||_| |_| |_| \___||_|    \___/ 
+                                         
+/*================================================================*/				  
+/*      Driver  : Timer0                           
+/*      Date    : 8/26/2023                                        
+/*      Authors : MetaWare LLC                                     
+/*				  Mahmoud Sayed Mahmoud Helmy (1285)               
+/*		          Mohamed Mahmoud Masoud (200)                     
+/*		          Mark Ehab Tawfik (201)                           
+/*		          Hazzem Mohamed Ezzeldin (1297)                   
+/*		          Yousef Khaled Ahmed (558)                        
+/*================================================================*/
 
 #ifndef MCAL_TIMER0_CONFIG_H_
 #define MCAL_TIMER0_CONFIG_H_

@@ -1,13 +1,20 @@
-/********************************************************************/
-/*      SWC     : AVR_LCD.c											*/
-/*      Date    : 8/26/2023                                         */
-/*      Authors : MetaWare LLC                                      */
-/*				  Mahmoud Sayed Mahmoud Helmy (1285)                */
-/*		          Mohamed Mahmoud Masoud (200)                      */
-/*		          Mark Ehab Tawfik (201)                            */
-/*		          Hazzem Mohamed Ezzeldin (1297)                    */
-/*		          Yousef Khaled Ahmed (558)                         */
-/********************************************************************/
+/*================================================================
+					  _      ____  ____                       
+					 | |    / ___||  _ \                      
+					 | |   | |    | | | |                     
+					 | |___| |___ | |_| |                     
+					 |_____|\____||____/                      
+                        
+/*================================================================*/				  
+/*      HAL     : LCD                      
+/*      Date    : 8/26/2023                                        
+/*      Authors : MetaWare LLC                                     
+/*				  Mahmoud Sayed Mahmoud Helmy (1285)               
+/*		          Mohamed Mahmoud Masoud (200)                     
+/*		          Mark Ehab Tawfik (201)                           
+/*		          Hazzem Mohamed Ezzeldin (1297)                   
+/*		          Yousef Khaled Ahmed (558)                        
+/*================================================================*/
 #include "AVR_LCD.h"
 #include <stdlib.h>
 
@@ -35,7 +42,7 @@ void LCD_init(void){
 	LCD_sendCommand(LCD_TWO_LINES_FOUR_BITS_MODE);
 	LCD_sendCommand(LCD_CLEAR_COMMAND);
 	LCD_sendCommand(LCD_CURSOR_OFF);
-	_delay_ms(10);
+	_delay_ms(20);
 	#elif(LCD_DATA_BITS_MODE == 8)
 	DIO_setupPortDirection(LCD_DATA_PORT_ID,PORT_OUTPUT);
 	LCD_sendCommand(LCD_TWO_LINES_EIGHT_BITS_MODE);
@@ -125,6 +132,7 @@ void LCD_displayString(const char *Str)
 void LCD_clearScreen(void)
 {
 	LCD_sendCommand(LCD_CLEAR_COMMAND);
+	_delay_ms(50);
 }
 void LCD_moveCursor(uint8 row,uint8 col)
 {
@@ -148,6 +156,7 @@ void LCD_moveCursor(uint8 row,uint8 col)
 	}
 	/* Move the LCD cursor to this specific address */
 	LCD_sendCommand(lcd_memory_address | LCD_SET_CURSOR_LOCATION);
+	_delay_ms(20);
 }
 void LCD_displayStringRowColumn(uint8 row,uint8 col,const char *Str)
 {

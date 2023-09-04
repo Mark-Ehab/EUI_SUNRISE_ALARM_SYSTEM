@@ -1,13 +1,20 @@
-/********************************************************************/
-/*      SWC     : LDR.c		                                        */
-/*      Date    : 8/28/2023                                         */
-/*      Authors : MetaWare LLC                                      */
-/*				  Mahmoud Sayed Mahmoud Helmy (1285)                */
-/*		          Mohamed Mahmoud Masoud (200)                      */
-/*		          Mark Ehab Tawfik (201)                            */
-/*		          Hazzem Mohamed Ezzeldin (1297)                    */
-/*		          Yousef Khaled Ahmed (558)                         */
-/********************************************************************/
+/*================================================================
+					  _      ____   ____                      
+					 | |    |  _ \ |  _ \                     
+					 | |    | | | || |_) |                    
+					 | |___ | |_| ||  _ <                     
+					 |_____||____/ |_| \_\                    
+                                          
+/*================================================================*/				  
+/*      HAL     : LDR                  
+/*      Date    : 8/26/2023                                        
+/*      Authors : MetaWare LLC                                     
+/*				  Mahmoud Sayed Mahmoud Helmy (1285)               
+/*		          Mohamed Mahmoud Masoud (200)                     
+/*		          Mark Ehab Tawfik (201)                           
+/*		          Hazzem Mohamed Ezzeldin (1297)                   
+/*		          Yousef Khaled Ahmed (558)                        
+/*================================================================*/
 
 
 #include "LDR.h"

@@ -1,13 +1,20 @@
-/********************************************************************/
-/*      SWC     : Button.h	                                        */
-/*      Date    : 8/26/2023                                         */
-/*      Authors : MetaWare LLC                                      */
-/*				  Mahmoud Sayed Mahmoud Helmy (1285)                */
-/*		          Mohamed Mahmoud Masoud (200)                      */
-/*		          Mark Ehab Tawfik (201)                            */
-/*		          Hazzem Mohamed Ezzeldin (1297)                    */
-/*		          Yousef Khaled Ahmed (558)                         */
-/********************************************************************/
+/*================================================================
+		  ____   _   _  _____  _____  ___   _   _ 
+		 | __ ) | | | ||_   _||_   _|/ _ \ | \ | |
+		 |  _ \ | | | |  | |    | | | | | ||  \| |
+		 | |_) || |_| |  | |    | | | |_| || |\  |
+		 |____/  \___/   |_|    |_|  \___/ |_| \_|
+                                          
+/*================================================================*/				  
+/*      HAL     : Button                 
+/*      Date    : 8/26/2023                                        
+/*      Authors : MetaWare LLC                                     
+/*				  Mahmoud Sayed Mahmoud Helmy (1285)               
+/*		          Mohamed Mahmoud Masoud (200)                     
+/*		          Mark Ehab Tawfik (201)                           
+/*		          Hazzem Mohamed Ezzeldin (1297)                   
+/*		          Yousef Khaled Ahmed (558)                        
+/*================================================================*/
 #include "Button.h"
 
 void Button_init(void)
