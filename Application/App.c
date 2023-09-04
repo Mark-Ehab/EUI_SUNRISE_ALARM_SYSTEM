@@ -25,7 +25,7 @@
 #include <stdlib.h>    /* Include the standard library for various functions */
 
 /*============================================================================================
- Global Variables
+                                   Global Variables
  ==============================================================================================
 
  * @details
@@ -63,7 +63,7 @@ Alarm_config alarms[MaximumAlarms] = { { 0, { AlarmInitialValue }, 0 }, /* alarm
 };
 
 /*==================================================================
- Initialization
+                          Initialization
  ==================================================================*/
 void App_Init(void)
 {
@@ -109,7 +109,7 @@ void App_Init(void)
 }
 
 /**===========================================================================================
- Main Application Loop
+                               Main Application Loop
  ==============================================================================================
  * @brief Main loop of the Sunrise Alarm Clock application.
  *
@@ -623,7 +623,7 @@ STATUS App_cancelAlarm()
 
 }
 /**=================================================================
- ISR CallBack
+                        ISR CallBack
  ==================================================================
  * @brief Routine for handling alarms.
  *
@@ -758,6 +758,40 @@ STATUS alarmAction()
 
 }
 
+/**==============================================================================================
+                             Solve Puzzle to Turnoff Alarm
+ *==============================================================================================
+ * @brief Simulate a user action to solve a puzzle and confirm the alarm.
+ *
+ * This function simulates a user action where the user is presented with a mathematical
+ * puzzle based on the current alarm and must provide the correct answer to confirm the alarm.
+ *
+ * @details
+ * When called, this function performs the following steps:
+ *
+ * 1. Initializes local variables, including `result` (the correct answer), `userAnswer`
+ *    (the user's input), and `answerCorrect` (a flag indicating if the answer is correct).
+ * 2. Selects a mathematical puzzle based on the current alarm (`g_NowFiredAlarm`) using a
+ *    `switch` statement.
+ * 3. Displays the puzzle on the LCD screen and determines the number of digits in the answer.
+ * 4. Enters a loop to simulate user input:
+ *    - Reads each digit of the user's input from the keypad.
+ *    - Displays the entered digit on the LCD screen.
+ *    - Constructs the user's answer as they enter digits.
+ *    - Checks if the user's answer matches the correct result.
+ * 5. If the user's answer is correct, it sets `answerCorrect` to `TRUE`, displays the correct
+ *    answer on the LCD, and returns `CONFIRMED` to indicate that the alarm action is confirmed.
+ * 6. If the user's answer is incorrect, it displays an error message on the LCD and continues
+ *    to prompt for input until the user provides the correct answer.
+ *
+ * @note
+ * - The `switch` statement selects a puzzle based on the current alarm (`g_NowFiredAlarm`).
+ * - The number of digits in the answer is determined by `numOfDigits`.
+ *
+ * @param None.
+ * @return The status `CONFIRMED` if the user provides the correct answer; otherwise, it returns ERR_STATE.
+ */
+
 STATUS WakeUpCalculator()
 {
     uint32 result = 0;
@@ -824,16 +858,12 @@ STATUS WakeUpCalculator()
     while (keyPadBuffer > ONES_OF_SEC_OR_MIN || keyPadBuffer < 0
             || (answerCorrect == FALSE));
 
-    /* RTE_LCD_moveCursor(2,17);
-     RTE_LCD_integerToString(userAnswer);
-     _delay_ms(100);*/
-
     return ERR_STATE;
 
 }
 
 /**=============================================================================
- Show Alarms
+                              Show Alarms
  *==============================================================================
  * This function displays a list of set alarms on an LCD screen.
  *
@@ -1003,7 +1033,7 @@ void LEDdimmingCompareMatch()
 }
 
 /**===============================================================
- Welcome Screen Display
+                    Welcome Screen Display
  ==================================================================
  ==================================================================
  * Function: App_welcomeScreen
