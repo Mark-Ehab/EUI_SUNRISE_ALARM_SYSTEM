@@ -22,7 +22,6 @@
 ================================================================*/
 
 #include "App.h"       /* Include the header file for this application */
-#include <stdlib.h>    /* Include the standard library for various functions */
 
 /*============================================================================================
  Global Variables
