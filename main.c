@@ -3,5 +3,5 @@
 int main()
 {
     App_Init();
-    App();
+    MainApp();
 }
