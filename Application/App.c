@@ -5,27 +5,27 @@
               | |\/| |/ _ \ __/ _` \ \/  \/ / _` | '__/ _ \
               | |  | |  __/ || (_| |\  /\  / (_| | | |  __/
               |_|  |_|\___|\__\__,_| \/  \/ \__,_|_|  \___|
-==================================================================                                                                                                                         
-    SWC : App.c                                
-    Date: 8/28/2023                            
-    Authors: MetaWare LLC                      
+==================================================================
+    SWC : App.c
+    Date: 8/28/2023
+    Authors: MetaWare LLC
             Mahmoud Sayed Mahmoud Helmy (1285)
-            Mohamed Mahmoud Masoud (200)      
-            Mark Ehab Tawfik (201)            
-            Hazzem Mohamed Ezzeldin (1297)    
-            Yousef Khaled Ahmed (558)         
+            Mohamed Mahmoud Masoud (200)
+            Mark Ehab Tawfik (201)
+            Hazzem Mohamed Ezzeldin (1297)
+            Yousef Khaled Ahmed (558)
 ================================================================
-     Description: This file contains the main application logic and 
-     functions for controlling alarms and user interactions.        
+     Description: This file contains the main application logic and
+     functions for controlling alarms and user interactions.
 ================================================================
-                        FILE NAME: App.c                       
+                        FILE NAME: App.c
 ================================================================*/
 
 #include "App.h"       /* Include the header file for this application */
 #include <stdlib.h>    /* Include the standard library for various functions */
 
-============================================================================================
-                                   Global Variables
+/*============================================================================================
+ Global Variables
  ==============================================================================================
 
  * @details
@@ -63,7 +63,7 @@ Alarm_config alarms[MaximumAlarms] = { { 0, { AlarmInitialValue }, 0 }, /* alarm
 };
 
 /*==================================================================
-                          Initialization
+ Initialization
  ==================================================================*/
 void App_Init(void)
 {
@@ -109,7 +109,7 @@ void App_Init(void)
 }
 
 /**===========================================================================================
-                               Main Application Loop
+ Main Application Loop
  ==============================================================================================
  * @brief Main loop of the Sunrise Alarm Clock application.
  *
@@ -623,7 +623,7 @@ STATUS App_cancelAlarm()
 
 }
 /**=================================================================
-                        ISR CallBack
+ ISR CallBack
  ==================================================================
  * @brief Routine for handling alarms.
  *
@@ -759,7 +759,7 @@ STATUS alarmAction()
 }
 
 /**==============================================================================================
-                             Solve Puzzle to Turnoff Alarm
+ Solve Equation to Stop Alarm
  *==============================================================================================
  * @brief Simulate a user action to solve a puzzle and confirm the alarm.
  *
@@ -863,7 +863,7 @@ STATUS WakeUpCalculator()
 }
 
 /**=============================================================================
-                              Show Alarms
+ Show Alarms
  *==============================================================================
  * This function displays a list of set alarms on an LCD screen.
  *
@@ -1033,7 +1033,7 @@ void LEDdimmingCompareMatch()
 }
 
 /**===============================================================
-                    Welcome Screen Display
+ Welcome Screen Display
  ==================================================================
  ==================================================================
  * Function: App_welcomeScreen
