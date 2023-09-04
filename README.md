@@ -43,17 +43,14 @@ we make sure to keep the math equations relatively simple and solvable within a 
 
 ### Functions
 
-
+- `App_init()`: Initializes LCD and keypad.
+- `MainApp()`: Implements the main logic of the application.
 - `alarmAction()`: Displays a message corresponding to the fired alarm.
 - `ISRcallBackFunction()`: Handles alarm firing based on the configured time.
-- `App_init()`: Initializes LCD and keypad.
-- `App_mainMenu()`: Displays the main menu options.
 - `App_setAlarm()`: Sets a new alarm by accepting user input.
 - `App_listAlarm()`: Lists all active alarms.
 - `App_cancelAlarm()`: Cancels a selected alarm.
-- `App_main()`: Implements the main logic of the application.
 - `WakeUpCalculator()`: This function guides the user to solve a puzzle as part of the wake-up process.
-- 
 
 ## Functionalities
 
