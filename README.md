@@ -18,7 +18,6 @@ The Sunrise Alarm Clock is a microcontroller-based project that simulates a natu
 - **Alarm Cancellation:** Unwanted alarms can be easily canceled using the intuitive keypad interface.
 - **Ambient Light Detection:** The LDR detects ambient light levels, allowing the system to adjust the sunrise simulation and alarm behavior based on the environment.
 - **Buzzer Activation:** The buzzer is activated when an alarm times out, providing an audible alert to the user.
-- 
 ## Additional Feature: Solve Math Equation to Close Alarm
 
 In this alarm, an interesting feature has been implemented that requires users to solve a math equation before they can close the alarm. This feature adds an element of cognitive engagement, ensuring that users are fully awake and alert when turning off the alarm.
