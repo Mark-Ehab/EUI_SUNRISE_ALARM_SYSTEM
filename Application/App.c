@@ -1,30 +1,30 @@
-/*================================================================
- __  __      _     __          __
- |  \/  |    | |    \ \        / /
- | \  / | ___| |_ __ \ \  /\  / /_ _ _ __ ___
- | |\/| |/ _ \ __/ _` \ \/  \/ / _` | '__/ _ \
+/*==================================================================
+               __  __      _     __          __
+              |  \/  |    | |    \ \        / /
+              | \  / | ___| |_ __ \ \  /\  / /_ _ _ __ ___
+              | |\/| |/ _ \ __/ _` \ \/  \/ / _` | '__/ _ \
               | |  | |  __/ || (_| |\  /\  / (_| | | |  __/
- |_|  |_|\___|\__\__,_| \/  \/ \__,_|_|  \___|
- ==================================================================
- SWC : App.c
- Date: 8/28/2023
- Authors: MetaWare LLC
- Mahmoud Sayed Mahmoud Helmy (1285)
- Mohamed Mahmoud Masoud (200)
- Mark Ehab Tawfik (201)
- Hazzem Mohamed Ezzeldin (1297)
- Yousef Khaled Ahmed (558)
- ================================================================
- Description: This file contains the main application logic and
- functions for controlling alarms and user interactions.
- ================================================================
- FILE NAME: App.c
- ================================================================*/
+              |_|  |_|\___|\__\__,_| \/  \/ \__,_|_|  \___|
+==================================================================                                                                                                                         
+    SWC : App.c                                
+    Date: 8/28/2023                            
+    Authors: MetaWare LLC                      
+            Mahmoud Sayed Mahmoud Helmy (1285)
+            Mohamed Mahmoud Masoud (200)      
+            Mark Ehab Tawfik (201)            
+            Hazzem Mohamed Ezzeldin (1297)    
+            Yousef Khaled Ahmed (558)         
+================================================================
+     Description: This file contains the main application logic and 
+     functions for controlling alarms and user interactions.        
+================================================================
+                        FILE NAME: App.c                       
+================================================================*/
 
 #include "App.h"       /* Include the header file for this application */
 #include <stdlib.h>    /* Include the standard library for various functions */
 
-/*============================================================================================
+============================================================================================
                                    Global Variables
  ==============================================================================================
 
