@@ -1,0 +1,124 @@
+Description	Resource	Path	Location	Type
+
+#1386-D (MISRA-C:2004 8.6/R) Functions shall be declared at file scope (function "itoa")	                               					AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 167	C/C++ Problem
+#1386-D (MISRA-C:2004 8.6/R) Functions shall be declared at file scope (function "itoa")				        		                AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 173	C/C++ Problem
+#1390-D (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "buff")	                                AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 167	C/C++ Problem
+#1390-D (MISRA-C:2004 9.1/R) All automatic variables shall have been assigned a value before being used (variable "buff")	                                AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 173	C/C++ Problem
+
+#1391-D (MISRA-C:2004 9.2/R) Braces shall be used to indicate and match the structure in the non-zero initialization of arrays and structures			App.c		/SunriseAlarmClock/Application	line 58		C/C++ Problem
+#1391-D (MISRA-C:2004 9.2/R) Braces shall be used to indicate and match the structure in the non-zero initialization of arrays and structures			App.c		/SunriseAlarmClock/Application	line 59		C/C++ Problem
+#1391-D (MISRA-C:2004 9.2/R) Braces shall be used to indicate and match the structure in the non-zero initialization of arrays and structures			App.c		/SunriseAlarmClock/Application	line 60		C/C++ Problem
+#1391-D (MISRA-C:2004 9.2/R) Braces shall be used to indicate and match the structure in the non-zero initialization of arrays and structures			App.c		/SunriseAlarmClock/Application	line 61		C/C++ Problem
+#1470-D (MISRA-C:2004 14.9/R) An if (expression) construct shall be followed by a compound statement. The else keyword shall be followed by either a compound statement, or another if statement	App.c	/SunriseAlarmClock/Application	line 410	C/C++ Problem
+#1496-D (MISRA-C:2004 5.6/A) No identifier in one name space should have the same spelling as an identifier in another name space, with the exception of structure member and union member names ("alarmindex")	App.c	/SunriseAlarmClock/Application	line 882	C/C++ Problem
+#1497-D (MISRA-C:2004 5.7/A) No identifier name should be reused ("keypadBuffer")	App.c	/SunriseAlarmClock/Application	line 882	C/C++ Problem
+#1470-D (MISRA-C:2004 14.9/R) An if (expression) construct shall be followed by a compound statement. The else keyword shall be followed by either a compound statement, or another if statement	App.c	/SunriseAlarmClock/Application	line 407	C/C++ Problem
+#1470-D (MISRA-C:2004 14.9/R) An if (expression) construct shall be followed by a compound statement. The else keyword shall be followed by either a compound statement, or another if statement	App.c	/SunriseAlarmClock/Application	line 384	C/C++ Problem
+#1470-D (MISRA-C:2004 14.9/R) An if (expression) construct shall be followed by a compound statement. The else keyword shall be followed by either a compound statement, or another if statement	App.c	/SunriseAlarmClock/Application	line 381	C/C++ Problem
+#1484-D (MISRA-C:2004 6.1/R) The plain char type shall be used only for the storage and use of character values	App.c	/SunriseAlarmClock/Application	line 925	C/C++ Problem
+#1485-D (MISRA-C:2004 6.2/R) signed and unsigned char type shall be used only for the storage and use of numeric values	App.c	/SunriseAlarmClock/Application	line 928	C/C++ Problem
+#1468-D (MISRA-C:2004 14.7/R) A function shall have a single point of exit at the end of the function	App.c	/SunriseAlarmClock/Application	line 848	C/C++ Problem
+#1468-D (MISRA-C:2004 14.7/R) A function shall have a single point of exit at the end of the function	App.c	/SunriseAlarmClock/Application	line 586	C/C++ Problem
+#1468-D (MISRA-C:2004 14.7/R) A function shall have a single point of exit at the end of the function	App.c	/SunriseAlarmClock/Application	line 930	C/C++ Problem
+#1468-D (MISRA-C:2004 14.7/R) A function shall have a single point of exit at the end of the function	App.c	/SunriseAlarmClock/Application	line 488	C/C++ Problem
+#1466-D (MISRA-C:2004 14.5/R) The continue statement shall not be used	App.c	/SunriseAlarmClock/Application	line 493	C/C++ Problem
+#1466-D (MISRA-C:2004 14.5/R) The continue statement shall not be used	App.c	/SunriseAlarmClock/Application	line 351	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 859	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 839	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 462	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 413	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 364	C/C++ Problem
+#1459-D (MISRA-C:2004 12.1/A) Limited dependence should be placed on C's operator precedence rules in expressions	App.c	/SunriseAlarmClock/Application	line 217	C/C++ Problem
+#1422-D (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "LEDdimmingOverFlow")	App.c	/SunriseAlarmClock/Application	line 90	C/C++ Problem
+#1422-D (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "LEDdimmingCompareMatch")	App.c	/SunriseAlarmClock/Application	line 88	C/C++ Problem
+#1422-D (MISRA-C:2004 16.9/R) A function identifier shall only be used with either a preceding &, or with a parenthesised parameter list, which may be empty (function "ISRcallBackFunction")	App.c	/SunriseAlarmClock/Application	line 99	C/C++ Problem
+#1455-D (MISRA-C:2004 2.2/R) Source code shall only use /* ... */ style comments	App.h	/SunriseAlarmClock/Application	line 28	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	App.h	/SunriseAlarmClock/Application	line 32	C/C++ Problem
+#1472-D (MISRA-C:2004 16.3/R) Identifiers shall be given for all of the parameters in a function prototype declaration	App.h	/SunriseAlarmClock/Application	line 32	C/C++ Problem
+#1499-D (MISRA-C:2004 8.8/R) An external object or function shall be declared in one and only one file	App.h	/SunriseAlarmClock/Application	line 32	C/C++ Problem
+#1499-D (MISRA-C:2004 8.8/R) An external object or function shall be declared in one and only one file	App.h	/SunriseAlarmClock/Application	line 217	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	Macros.h	/SunriseAlarmClock/Commons	line 22	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	Macros.h	/SunriseAlarmClock/Commons	line 23	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	Macros.h	/SunriseAlarmClock/Commons	line 24	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	Macros.h	/SunriseAlarmClock/Commons	line 25	C/C++ Problem
+#1430-D (MISRA-C:2004 19.10/R) In the definition of a function-like macro each instance of a parameter shall be enclosed in parentheses unless it is used as the operand of # or ##. The compiler cannot determine if the parameter "REG" is used as an operand of # or ##.	Macros.h	/SunriseAlarmClock/Commons	line 25	C/C++ Problem
+#1430-D (MISRA-C:2004 19.10/R) In the definition of a function-like macro each instance of a parameter shall be enclosed in parentheses unless it is used as the operand of # or ##. The compiler cannot determine if the parameter "BIT" is used as an operand of # or ##.	Macros.h	/SunriseAlarmClock/Commons	line 25	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	atmega32_mapping.h	/SunriseAlarmClock/Commons	line 80	C/C++ Problem
+#1482-D (MISRA-C:2004 19.13/A) The # and ## operators should not be used	atmega32_mapping.h	/SunriseAlarmClock/Commons	line 80	C/C++ Problem
+#1428-D (MISRA-C:2004 19.7/A) A function should be used in preference to a function-like macro	atmega32_mapping.h	/SunriseAlarmClock/Commons	line 83	C/C++ Problem
+#1430-D (MISRA-C:2004 19.10/R) In the definition of a function-like macro each instance of a parameter shall be enclosed in parentheses unless it is used as the operand of # or ##. The compiler cannot determine if the parameter "vector" is used as an operand of # or ##.	atmega32_mapping.h	/SunriseAlarmClock/Commons	line 83	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 1052	C/C++ Problem
+#1435-D (MISRA-C:2004 20.1/R) Reserved identifiers, macros and functions in the standard library, shall not be defined, redefined or undefined ("NULL")	std_types.h	/SunriseAlarmClock/Commons	line 39	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 1025	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 878	C/C++ Problem
+#1465-D (MISRA-C:2004 14.1/R) There shall be no unreachable code	Button.c	/SunriseAlarmClock/HAL/Button	line 45	C/C++ Problem
+#1468-D (MISRA-C:2004 14.7/R) A function shall have a single point of exit at the end of the function	Button.c	/SunriseAlarmClock/HAL/Button	line 43	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 795	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 715	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 538	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 305	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	App.c	/SunriseAlarmClock/Application	line 152	C/C++ Problem
+#1416-D (MISRA-C:2004 15.2/R) An unconditional break statement shall terminate every non-empty switch clause	App.c	/SunriseAlarmClock/Application	line 825	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	Button.c	/SunriseAlarmClock/HAL/Button	line 41	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 68	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 75	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 67	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 76	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 66	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 77	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 65	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 78	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 859	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 97	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 462	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 98	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 413	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 99	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 217	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 100	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 216	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 107	C/C++ Problem
+#1405-D (MISRA-C:2004 12.5/R) The operands of a logical && or || shall be primary-expressions	App.c	/SunriseAlarmClock/Application	line 215	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 108	C/C++ Problem
+#1400-D (MISRA-C:2004 11.3/A) A cast should not be performed between a pointer type and an integral type	Button.c	/SunriseAlarmClock/HAL/Button	line 41	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 109	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a return expression	App.c	/SunriseAlarmClock/Application	line 933	C/C++ Problem
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 110	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a return expression	App.c	/SunriseAlarmClock/Application	line 930	C/C++ Problem
+#1476-D (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 126	C/C++ Problem
+#1476-D (MISRA-C:2004 17.4/R) Array indexing shall be the only allowed form of pointer arithmetic	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 128	C/C++ Problem
+
+#1406-D (MISRA-C:2004 12.7/R) Bitwise operators shall not be applied to operands whose underlying type is signed	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 157	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 912	C/C++ Problem
+#1471-D (MISRA-C:2004 15.3/R) The final clause of a switch statement shall be the default clause	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 141	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 164	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 894	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 846	C/C++ Problem
+<a href="file:/C:/ti/ccs1210/ccs/tools/compiler/dmed/HTML/225.html">#225-D</a>  function "itoa" declared implicitly	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 167	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 837	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 170	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 732	C/C++ Problem
+#1497-D (MISRA-C:2004 5.7/A) No identifier name should be reused ("buff")	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 171	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 726	C/C++ Problem
+#1496-D (MISRA-C:2004 5.6/A) No identifier in one name space should have the same spelling as an identifier in another name space, with the exception of structure member and union member names ("itoa")	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 173	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 614	C/C++ Problem
+<a href="file:/C:/ti/ccs1210/ccs/tools/compiler/dmed/HTML/225.html">#225-D</a>  function "itoa" declared implicitly	AVR_LCD.c	/SunriseAlarmClock/HAL/LCD	line 173	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 597	C/C++ Problem
+#1455-D (MISRA-C:2004 2.2/R) Source code shall only use /* ... */ style comments	AVR_LCD.h	/SunriseAlarmClock/HAL/LCD	line 31	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	AVR_LCD.h	/SunriseAlarmClock/HAL/LCD	line 32	C/C++ Problem
+#1472-D (MISRA-C:2004 16.3/R) Identifiers shall be given for all of the parameters in a function prototype declaration	AVR_LCD.h	/SunriseAlarmClock/HAL/LCD	line 32	C/C++ Problem
+#1499-D (MISRA-C:2004 8.8/R) An external object or function shall be declared in one and only one file	AVR_LCD.h	/SunriseAlarmClock/HAL/LCD	line 32	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	AVR_LCD.h	/SunriseAlarmClock/HAL/LCD	line 117	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	LED.h	/SunriseAlarmClock/HAL/LED	line 59	C/C++ Problem
+#1455-D (MISRA-C:2004 2.2/R) Source code shall only use /* ... */ style comments	atmega32_DIO.h	/SunriseAlarmClock/MCAL/DIO	line 24	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	atmega32_DIO.h	/SunriseAlarmClock/MCAL/DIO	line 25	C/C++ Problem
+#1472-D (MISRA-C:2004 16.3/R) Identifiers shall be given for all of the parameters in a function prototype declaration	atmega32_DIO.h	/SunriseAlarmClock/MCAL/DIO	line 25	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 571	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	atmega32_Interrupts.h	/SunriseAlarmClock/MCAL/Interrupt	line 80	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	atmega32_Interrupts.h	/SunriseAlarmClock/MCAL/Interrupt	line 90	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	atmega32_Interrupts.h	/SunriseAlarmClock/MCAL/Interrupt	line 96	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	atmega32_Interrupts.h	/SunriseAlarmClock/MCAL/Interrupt	line 70	C/C++ Problem
+#1421-D (MISRA-C:2004 16.8/R) All exit paths from a function with non-void return type shall have an explicit return statement with an expression (function "main")	main.c	/SunriseAlarmClock	line 7	C/C++ Problem
+#1498-D (MISRA-C:2004 6.3/A) typedefs that indicate size and signedness should be used in place of the basic numerical types	main.c	/SunriseAlarmClock	line 3	C/C++ Problem
+#1420-D (MISRA-C:2004 16.5/R) Functions with no parameters shall be declared and defined with the parameter list void	main.c	/SunriseAlarmClock	line 3	C/C++ Problem
+#1393-D (MISRA-C:2004 10.1/R) The value of an expression of integer type shall not be implicitly converted to a different underlying type if the expression is not constant and is a function argument	App.c	/SunriseAlarmClock/Application	line 554	C/C++ Problem
